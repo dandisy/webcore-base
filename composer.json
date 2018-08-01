@@ -1,0 +1,28 @@
+{
+    "name": "dandisy/webcore-base",
+    "description": "Main Package of webcore platform",
+    "authors": [
+        {
+            "name": "dandi",
+            "email": "dandi@redbuzz.co.id"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "arrilot/laravel-widgets": "^3.7",
+        "dandisy/adminlte-templates": "^1.0.0",
+        "dandisy/filemanager": "^1.0.0",
+        "dandisy/laravel-generator": "^1.0.0",
+        "dandisy/swagger-generator": "^1.0.0",
+        "doctrine/dbal": "~2.3",
+        "jlapp/swaggervel": "dev-master",
+        "league/glide-laravel": "^1.0",
+        "santigarcor/laratrust": "^4.0",
+        "spatie/laravel-cors": "^1.0",
+        "yajra/laravel-datatables-buttons": "3.0",
+        "yajra/laravel-datatables-oracle": "~8.0"
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.1"
+    }
+}
