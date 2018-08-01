@@ -8,6 +8,7 @@
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "arrilot/laravel-widgets": "^3.7",
         "dandisy/adminlte-templates": "^1.0.0",
@@ -15,6 +16,7 @@
         "dandisy/laravel-generator": "^1.0.0",
         "dandisy/swagger-generator": "^1.0.0",
         "doctrine/dbal": "~2.3",
+        "jlapp/swaggervel": "dev-master",
         "league/glide-laravel": "^1.0",
         "santigarcor/laratrust": "^4.0",
         "spatie/laravel-cors": "^1.0",
