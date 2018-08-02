@@ -1,6 +1,6 @@
 <?php
 
-namespace Webcore\Page;
+namespace Webcore\Base;
 
 use Illuminate\Support\ServiceProvider;
 

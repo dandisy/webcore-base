@@ -25,5 +25,17 @@
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webcore\\Base\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webcore\\Base\\BaseServiceProvider"
+            ]
+        }
     }
 }
