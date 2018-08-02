@@ -22,8 +22,8 @@ class BaseServiceProvider extends ServiceProvider
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/views' => resource_path('views/vendor/webcore/base'),
-        ]);
+            __DIR__.'/views' => resource_path('views/vendor/webcore'),
+        ], 'views');
     }
 
     /**
