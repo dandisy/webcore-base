@@ -18,20 +18,31 @@ class BaseServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/views', 'base');
 
         $this->publishes([
-            __DIR__.'/config' => config_path('webcore')
+            __DIR__.'/config' => config_path(),
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/Controllers' => app_path('Http/Controllers'),
-        ], 'Controllers');
+            __DIR__.'/app' => app_path(),
+        ], 'app');
 
         $this->publishes([
-            __DIR__.'/views' => resource_path('views'),
-        ], 'views');
+            __DIR__.'/database/seeds' => base_path('database/seeds'),
+        ], 'webcore-seeds');
 
         $this->publishes([
-            __DIR__.'/assets' => public_path('vendor'),
-        ], 'assets');
+            __DIR__.'/resources' => resource_path(),
+        ], 'resources');
+
+        $this->publishes([
+            __DIR__.'/public' => public_path(),
+        ], 'public');
+
+        $this->publishes([
+            __DIR__.'/config' => config_path(),
+            __DIR__.'/app' => app_path(),
+            __DIR__.'/resources' => resource_path(),
+            __DIR__.'/public' => public_path(),
+        ], 'webcore');
     }
 
     /**

@@ -8,19 +8,17 @@ For https://github.com/dandisy/webcore
 
 ### Publishing
 
-    php artisan vendor:publish --provider="Webcore\Base\BaseServiceProvider" --tag=config
+    php artisan vendor:publish --tag=webcore
 
-    php artisan vendor:publish --provider="Webcore\Base\BaseServiceProvider" --tag=Controllers
-
-    php artisan vendor:publish --provider="Webcore\Base\BaseServiceProvider" --tag=views
-
-    php artisan vendor:publish --provider="Webcore\Base\BaseServiceProvider" --tag=assets
-
-    php artisan vendor:publish --tag="laratrust"
+    php artisan vendor:publish --tag=webcore-seeds --force
 
 ### Setting Dependencies
 
     php artisan laratrust:setup
+
+    php artisan laratrust:seeder
+
+    php artisan vendor:publish --tag="laratrust"
 
 
 #
