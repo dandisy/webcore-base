@@ -22,16 +22,16 @@ class BaseServiceProvider extends ServiceProvider
         ], 'config');
 
         $this->publishes([
+            __DIR__.'/Controllers' => app_path('Http/Controllers'),
+        ], 'Controllers');
+
+        $this->publishes([
             __DIR__.'/views' => resource_path('views'),
         ], 'views');
 
         $this->publishes([
             __DIR__.'/assets' => public_path('vendor'),
         ], 'assets');
-
-        $this->publishes([
-            __DIR__.'/Controllers' => app_path('Http/Controllers'),
-        ], 'controllers');
     }
 
     /**

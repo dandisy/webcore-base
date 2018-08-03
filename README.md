@@ -6,23 +6,21 @@ For https://github.com/dandisy/webcore
 
     composer require dandisy/webcore-base:dev-master
 
-    php artisan laratrust:setup
-
-    composer dump-autoload
-
-### More
+### Publishing
 
     php artisan vendor:publish --provider="Webcore\Base\BaseServiceProvider" --tag=config
 
-    php artisan vendor:publish --provider="Webcore\Base\BaseServiceProvider" --tag=assets
+    php artisan vendor:publish --provider="Webcore\Base\BaseServiceProvider" --tag=Controllers
 
-    php artisan vendor:publish --provider="Webcore\Base\BaseServiceProvider" --tag=controller
+    php artisan vendor:publish --provider="Webcore\Base\BaseServiceProvider" --tag=views
+
+    php artisan vendor:publish --provider="Webcore\Base\BaseServiceProvider" --tag=assets
 
     php artisan vendor:publish --tag="laratrust"
 
-if you want to override layouts view :
+### Setting Dependencies
 
-    php artisan vendor:publish --provider="Webcore\Base\BaseServiceProvider" --tag=views
+    php artisan laratrust:setup
 
 
 #
