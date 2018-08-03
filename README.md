@@ -12,6 +12,10 @@ For https://github.com/dandisy/webcore
 
     php artisan vendor:publish --tag=webcore-seeds --force
 
+    php artisan vendor:publish --tag=webcore-user --force
+
+    php artisan vendor:publish --tag=webcore-route --force
+
 ### Setting Dependencies
 
     php artisan laratrust:setup

@@ -18,17 +18,18 @@ Route::group(['middleware' => 'auth'], function () {
         return view('menu::index');
     });
 
-    Route::group(['middleware' => ['role:superadministrator|administrator']], function () {
-        Route::resource('users', 'UserController');
+    //ERROR : class role not found, class controller not found
+    // Route::group(['middleware' => ['role:superadministrator|administrator']], function () {
+    //     Route::resource('users', 'UserController');
 
-        Route::resource('profiles', 'ProfileController');
+    //     Route::resource('profiles', 'ProfileController');
 
-        Route::resource('roles', 'RoleController');
+    //     Route::resource('roles', 'RoleController');
 
-        Route::resource('permissions', 'PermissionController');
+    //     Route::resource('permissions', 'PermissionController');
 
-        Route::resource('settings', 'SettingController');
-    });
+    //     Route::resource('settings', 'SettingController');
+    // });
 });
 
 Route::get('/img/{path}', function(Filesystem $filesystem, $path) {
