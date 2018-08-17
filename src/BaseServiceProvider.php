@@ -26,16 +26,8 @@ class BaseServiceProvider extends ServiceProvider
         ], 'app');
 
         $this->publishes([
-            __DIR__.'/app/User.php' => app_path('User.php'),
-        ], 'webcore-user');
-
-        $this->publishes([
             __DIR__.'/database/migrations' => base_path('database/migrations'),
         ], 'migrations');
-
-        $this->publishes([
-            __DIR__.'/database/seeds' => base_path('database/seeds'),
-        ], 'webcore-seeds');
 
         $this->publishes([
             __DIR__.'/resources' => resource_path(),
@@ -44,6 +36,14 @@ class BaseServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/public' => public_path(),
         ], 'public');
+
+        $this->publishes([
+            __DIR__.'/database/seeds' => base_path('database/seeds'),
+        ], 'webcore-seeds');
+
+        $this->publishes([
+            __DIR__.'/app/User.php' => app_path('User.php'),
+        ], 'webcore-user');
 
         $this->publishes([
             __DIR__.'/routes' => base_path('routes'),
@@ -56,6 +56,12 @@ class BaseServiceProvider extends ServiceProvider
             __DIR__.'/resources' => resource_path(),
             __DIR__.'/public' => public_path(),
         ], 'webcore');
+
+        $this->publishes([
+            __DIR__.'/database/seeds' => base_path('database/seeds'),
+            __DIR__.'/app/User.php' => app_path('User.php'),
+            __DIR__.'/routes' => base_path('routes'),
+        ], 'webcore-override');
     }
 
     /**

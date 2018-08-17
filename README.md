@@ -10,11 +10,7 @@ For https://github.com/dandisy/webcore
 
     php artisan vendor:publish --tag=webcore
 
-    php artisan vendor:publish --tag=webcore-seeds --force
-
-    php artisan vendor:publish --tag=webcore-user --force
-
-    php artisan vendor:publish --tag=webcore-route --force
+    php artisan vendor:publish --tag=webcore-override --force
 
 ### Setting Dependencies
 
