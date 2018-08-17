@@ -61,6 +61,9 @@ class BaseServiceProvider extends ServiceProvider
             __DIR__.'/database/seeds' => base_path('database/seeds'),
             __DIR__.'/app/User.php' => app_path('User.php'),
             __DIR__.'/routes' => base_path('routes'),
+            __DIR__.'/resources/views/welcome.blade.php' => resource_path('views/welcome.blade.php'),
+            __DIR__.'/resources/views/home.blade.php' => resource_path('views/home.blade.php'),
+            __DIR__.'/resources/views/auth' => resource_path('views/auth'),
         ], 'webcore-override');
     }
 

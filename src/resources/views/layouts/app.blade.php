@@ -55,6 +55,9 @@
         .file-item {
             margin-top: 15px;
         }
+        .no-side-menu {
+            margin-left: 0;
+        }
     </style>
 
     @yield('css')
@@ -73,10 +76,12 @@
 
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">
+                @if(!Request::is('dashboard*') and !Request::is('stats*'))
                 <!-- Sidebar toggle button-->
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                     <span class="sr-only">Toggle navigation</span>
                 </a>
+                @endif
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
@@ -103,7 +108,7 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="{{ url('edit-profile') }}" class="btn btn-default btn-flat">Profile</a>
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
                                         <a href="{!! url('/logout') !!}" class="btn btn-default btn-flat"
@@ -123,9 +128,11 @@
         </header>
 
         <!-- Left side column. contains the logo and sidebar -->
+        @if(!Request::is('dashboard*') and !Request::is('stats*'))
         @include('layouts.sidebar')
+        @endif
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper{{ (Request::is('dashboard*') or Request::is('stats*')) ? ' no-side-menu' : '' }}">
             @yield('content')
         </div>
 
@@ -137,7 +144,7 @@
         </div>
 
         <!-- Main Footer -->
-        <footer class="main-footer" style="max-height: 100px;text-align: center">
+        <footer class="main-footer{{ (Request::is('dashboard*') or Request::is('stats*')) ? ' no-side-menu' : '' }}" style="max-height: 100px;text-align: center">
             <strong>Copyright © 2017 <a href="#">Webcore</a>.</strong> All rights reserved.
         </footer>
 
