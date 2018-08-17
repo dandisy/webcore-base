@@ -8,6 +8,8 @@ add in composer.json
     
     "minimum-stability": "dev",
 
+then
+
     composer require dandisy/webcore-base:dev-master
 
 ### Publishing
