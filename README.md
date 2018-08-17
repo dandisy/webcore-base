@@ -4,6 +4,10 @@ For https://github.com/dandisy/webcore
 
 ### Installation
 
+add in composer.json 
+    
+    "minimum-stability": "dev",
+
     composer require dandisy/webcore-base:dev-master
 
 ### Publishing
