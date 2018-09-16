@@ -34,7 +34,9 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Webcore\\Base\\BaseServiceProvider"
+                "Webcore\\Base\\BaseServiceProvider",
+                "Webcore\\FileManager\\FileManagerServiceProvider",
+                "Prettus\\Repository\\Providers\\RepositoryServiceProvider"
             ]
         }
     }

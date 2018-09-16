@@ -4,30 +4,33 @@ For https://github.com/dandisy/webcore
 
 ### Installation
 
-run
-
-    php artisan make:auth
-
-add this in composer.json 
+add this additional composer config in composer.json file of your laravel project (composer.json file in your root laravel project)
     
     "minimum-stability": "dev",
 
-install webcore-base
+for example we add it under "type" :
+
+    {
+        . . .
+        "type": "project",
+        "minimum-stability": "dev",
+        "require": {
+            . . .
+        },
+        . . .
+    }
+
+install webcore-base via composer
 
     composer require dandisy/webcore-base:dev-master
 
-add this in app config
-
-    Prettus\Repository\Providers\RepositoryServiceProvider::class,
-    Webcore\FileManager\FileManagerServiceProvider::class,
-
-### Publishing
+### Publishing Webcore Package to Your Laravel Project
 
     php artisan vendor:publish --tag=webcore
 
     php artisan vendor:publish --tag=webcore-override --force
 
-### Setting Dependencies
+### Installing and Activating Laratrust
 
     php artisan laratrust:setup
 
@@ -43,9 +46,13 @@ add this in app config
 
     php artisan migrate --seed
 
-if error SQLSTATE[42000] add this to boot() function in AppServiceProvider
+if you get error SQLSTATE[42000], add this in boot() function in app/Providers/AppServiceProvider.php
 
     \Illuminate\Support\Facades\Schema::defaultStringLength(191);
+
+    then run again
+
+    php artisan migrate --seed
 
 
 #
