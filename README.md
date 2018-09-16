@@ -51,9 +51,9 @@ then run again
 
 ### Usage
 
-After long steps above, now we can use Webcore Platform.
+After long steps in above, now we can use Webcore Platform.
 
-For example we can generate admin page for manage (CRUD) our pages, run this artisan command :
+For example we can generate admin page for manage (CRUD) of our pages, run this artisan command :
 
     php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin --logs
 
