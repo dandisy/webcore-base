@@ -117,6 +117,45 @@ To try generator you can start generating admin page for manage (CRUD) of our pa
 
     php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin --logs
 
+The command will generate all the code to CRUD into the Page table, including the migration file and its table with the schema as defined in the resources/model_schemas/Page.json file.
+
+You can also try to generate CRUD interactively via the command line, without the need to set up the json file as a schema definition first, for example:
+
+    php artisan generate:api_scaffold Post --datatables=true --prefix=admin --logs
+
+then if you prompted
+
+    Field: (name db_type html_type options) []:
+    >
+
+you must input the name of fields, data type of the field in database, the type of html form input
+and last is options for the field but this is optional. for example you can try :
+
+    title text text
+
+then you will be prompted
+
+     Enter validations:  []:
+     >
+
+for this we will try to enter
+
+    required
+
+which means that this field is needed to be filled in.
+
+next we will be prompted repeatedly. And we can try, the following :
+
+    description text textarea
+
+the last
+
+    image text file-manager
+
+then
+
+    exit
+
 #### More documentation
 
 Webcore contains a lot of very useful packages and features, 
