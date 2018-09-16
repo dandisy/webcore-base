@@ -30,6 +30,8 @@ install webcore-base via composer
 
 ### Setup Laratrust
 
+Webcore use Laratrust for Role Based Access Control, run this artisan command to setting up it's package :
+
     php artisan laratrust:setup
 
 ### Dumping
@@ -82,6 +84,10 @@ then run again
 
 ### Linking Storage
 
+Webcore include file manager package, the default place to save your uploaded file is in storage folder,
+so to as mentioned in laravel documentation to access this file we must create symbolic link to our public folder
+with artisan command below :
+
     php artisan storage:link
 
 ### Usage
@@ -94,6 +100,7 @@ For example we can generate admin page for manage (CRUD) of our pages, run this 
 
 #### More documentation
 
+Webcore include many packages, ie : image manipulation, code generator, file manager, etc.
 For more usage documentation you can find in https://github.com/dandisy/webcore
 
 
