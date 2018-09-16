@@ -22,7 +22,7 @@ for example we can add it under "type" configuration :
 
 #### note :
 Just now this step is needed only because for now the webcore-base does not have a release version, 
-later this will be discarded, after we make the release version.
+later this will be discarded, after the release version has been published.
 
 Well, to install the Webcore on the existing Laravel Project is as follows :
 
