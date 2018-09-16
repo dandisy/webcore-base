@@ -57,6 +57,10 @@ For example we can generate admin page for manage (CRUD) of our pages, run this 
 
     php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin --logs
 
+#### More documentation
+
+For more usage documentation you can find in https://github.com/dandisy/webcore
+
 
 #
 by dandi@redbuzz.co.id
