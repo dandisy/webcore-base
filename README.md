@@ -128,7 +128,7 @@ then if you prompted
     Field: (name db_type html_type options) []:
     >
 
-you must input the name of fields, data type of the field in database, the type of html form input
+you must input the name of fields, data type of the field in database, the type of html input form
 and last is options for the field but this is optional. for example you can try :
 
     title text text
