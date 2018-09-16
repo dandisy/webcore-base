@@ -80,6 +80,10 @@ then run again
 
     php artisan migrate:fresh --seed
 
+### Linking Storage
+
+    php artisan storage:link
+
 ### Usage
 
 After long steps in above, now we can use Webcore Platform.
