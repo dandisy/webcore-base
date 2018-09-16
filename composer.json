@@ -8,6 +8,7 @@
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "dandisy/adminlte-templates": "^1.0.0",
         "dandisy/filemanager": "^1.0.0",
