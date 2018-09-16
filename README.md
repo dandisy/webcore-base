@@ -104,6 +104,15 @@ following Laravel's explanation we need to create a symbolic link in the public 
 
 After being confused to follow the step by step above, now webcore has been integrated with your laravel project.
 
+Now you can try entering the admin webcore page at http://your-domain/admin with the following login accounts:
+
+    username/email :
+        * superadministrator@app.com
+        * administrator@app.com
+        * user@app.com
+
+    password for all accounts : password
+
 To try it you can start generating admin page for manage (CRUD) of our pages, by running the following artisan command :
 
     php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin --logs
