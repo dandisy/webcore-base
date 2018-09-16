@@ -146,7 +146,7 @@ which means that this field is needed to be filled in.
 
 next we will be prompted repeatedly. And we can try, the following :
 
-    description text textarea
+    description text text-editor
 
 the last
 
