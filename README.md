@@ -110,7 +110,7 @@ To try it you can start generating admin page for manage (CRUD) of our pages, by
 
 #### More documentation
 
-Webcore contains a lot of very useful packages, 
+Webcore contains a lot of very useful packages and features, 
 ie : image manipulation (Glide), code generator (inspired by Infyom), file manager, and many others.
 
 For more usage documentation you can find it on https://github.com/dandisy/webcore
