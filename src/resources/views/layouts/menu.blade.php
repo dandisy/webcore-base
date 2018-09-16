@@ -44,7 +44,7 @@
 @endif
 @endrole
 
-@if(
+{{--@if(
     !Request::is('dashboard*') and
     !Request::is('stats*') and
     !Request::is('assets*') and
@@ -93,13 +93,5 @@
 <li class="{{ Request::is('dataColumns*') ? 'active' : '' }}">
     <a href="{!! route('admin.dataColumns.index') !!}"><i class="fa fa-table"></i><span>Data Columns</span></a>
 </li>
-@endif
-
-<li class="{{ Request::is('pages*') ? 'active' : '' }}">
-    <a href="{!! route('admin.pages.index') !!}"><i class="fa fa-edit"></i><span>Pages</span></a>
-</li>
-
-<li class="{{ Request::is('pages*') ? 'active' : '' }}">
-    <a href="{!! route('pages.index') !!}"><i class="fa fa-edit"></i><span>Pages</span></a>
-</li>
+@endif--}}
 

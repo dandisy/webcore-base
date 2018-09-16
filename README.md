@@ -26,17 +26,11 @@ install webcore-base via composer
 
 ### Publishing Webcore Package to Your Laravel Project
 
-    php artisan vendor:publish --tag=webcore
+    php artisan vendor:publish --tag=webcore --force
 
-    php artisan vendor:publish --tag=webcore-override --force
-
-### Installing and Activating Laratrust
+### Setup Laratrust
 
     php artisan laratrust:setup
-
-    php artisan laratrust:seeder
-
-    php artisan vendor:publish --tag="laratrust"
 
 ### Dumping
 
@@ -52,7 +46,15 @@ if you get error SQLSTATE[42000], add this in boot() function in app/Providers/A
 
     then run again
 
-    php artisan migrate --seed
+    php artisan migrate:fresh --seed
+
+### Usage
+
+After long steps above, now we can use Webcore Platform.
+
+For example we can generate admin page for manage (CRUD) our pages, run this artisan command :
+
+    php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin --logs
 
 
 #
