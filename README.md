@@ -40,11 +40,12 @@ install webcore-base via composer
 
     php artisan migrate --seed
 
+### Note :
 if you get error SQLSTATE[42000], add this in boot() function in app/Providers/AppServiceProvider.php
 
     \Illuminate\Support\Facades\Schema::defaultStringLength(191);
 
-    then run again
+then run again
 
     php artisan migrate:fresh --seed
 
