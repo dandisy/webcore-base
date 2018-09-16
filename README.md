@@ -113,7 +113,7 @@ Now you can try entering the admin webcore page at http://your-domain/admin with
 
     password for all accounts : password
 
-To try it you can start generating admin page for manage (CRUD) of our pages, by running the following artisan command :
+To try generator you can start generating admin page for manage (CRUD) of our pages, by running the following artisan command :
 
     php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin --logs
 
