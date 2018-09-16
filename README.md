@@ -45,6 +45,37 @@ if you get error SQLSTATE[42000], add this in boot() function in app/Providers/A
 
     \Illuminate\Support\Facades\Schema::defaultStringLength(191);
 
+so AppServerProvider become :
+
+    <?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+
+    class AppServiceProvider extends ServiceProvider
+    {
+        /**
+        * Bootstrap any application services.
+        *
+        * @return void
+        */
+        public function boot()
+        {
+            \Illuminate\Support\Facades\Schema::defaultStringLength(191);
+        }
+
+        /**
+        * Register any application services.
+        *
+        * @return void
+        */
+        public function register()
+        {
+            //
+        }
+    }
+
 then run again
 
     php artisan migrate:fresh --seed
