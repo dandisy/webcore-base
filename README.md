@@ -49,9 +49,9 @@ so AppServerProvider become :
 
     <?php
 
-namespace App\Providers;
+    namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+    use Illuminate\Support\ServiceProvider;
 
     class AppServiceProvider extends ServiceProvider
     {
