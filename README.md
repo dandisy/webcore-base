@@ -24,7 +24,7 @@ for example we can add it under "type" configuration :
 Just now this step is needed only because for now the webcore-base does not have a release version, 
 later this will be discarded, after the release version has been published.
 
-Well, to install the Webcore on the existing Laravel Project is as follows :
+Well, to install the webcore on the existing Laravel Project is as follows :
 
     composer require dandisy/webcore-base:dev-master
 
@@ -36,7 +36,7 @@ This step will copy the webcore codes that you can customize into the laravel pr
 
 ### Setup Laratrust
 
-Webcore use Laratrust as Role Based Access Control (RBAC), run the following artisan command to setting up it's package :
+Webcore use laratrust as Role Based Access Control (RBAC), run the following artisan command to setting up it's package :
 
     php artisan laratrust:setup
 
@@ -48,7 +48,7 @@ Dump the composer packages
 
 ### Migrating & Seeding
 
-Do the migration and seed Webcore
+Do the migration and seed
 
     php artisan migrate --seed
 
@@ -88,7 +88,7 @@ so, that way your AppServerProvider becomes :
         }
     }
 
-then run again
+then, after editing the AppServerProvider, run again the following :
 
     php artisan migrate:fresh --seed
 
