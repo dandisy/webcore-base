@@ -4,11 +4,11 @@ For https://github.com/dandisy/webcore
 
 ### Installation
 
-add this additional composer config in composer.json file of your laravel project (composer.json file in your root laravel project)
+Add the following additional configuration to composer.json file of your project laravel (the composer.json file in the root project laravel).
     
     "minimum-stability": "dev",
 
-for example we add it under "type" :
+for example we can add it under "type" configuration :
 
     {
         . . .
@@ -20,34 +20,44 @@ for example we add it under "type" :
         . . .
     }
 
-install webcore-base via composer
+#### note :
+Just now this step is needed only because for now the webcore-base does not have a release version, 
+later this will be discarded, after we make the release version.
+
+Well, to install the Webcore on the existing Laravel Project is as follows :
 
     composer require dandisy/webcore-base:dev-master
 
-### Publishing Webcore Package to Your Laravel Project
+### Publishing
+
+This step will copy the webcore codes that you can customize into the laravel project.
 
     php artisan vendor:publish --tag=webcore --force
 
 ### Setup Laratrust
 
-Webcore use Laratrust for Role Based Access Control, run this artisan command to setting up it's package :
+Webcore use Laratrust as Role Based Access Control (RBAC), run the following artisan command to setting up it's package :
 
     php artisan laratrust:setup
 
 ### Dumping
 
+Dump the composer packages
+
     composer dump-autoload
 
 ### Migrating & Seeding
 
+Do the migration and seed Webcore
+
     php artisan migrate --seed
 
 #### Note :
-if you get error SQLSTATE[42000], add this in boot() function in app/Providers/AppServiceProvider.php
+if in this step you get an error SQLSTATE[42000], add the following to the boot() function in app/Providers/AppServiceProvider.php
 
     \Illuminate\Support\Facades\Schema::defaultStringLength(191);
 
-so AppServerProvider become :
+so, that way your AppServerProvider becomes :
 
     <?php
 
@@ -84,24 +94,26 @@ then run again
 
 ### Linking Storage
 
-Webcore include file manager package, the default place to save your uploaded file is in storage folder,
-so to as mentioned in laravel documentation to access this file we must create symbolic link to our public folder
-with artisan command below :
+Webcore includes file manager, to handle files that you upload. As well as laravel by default, 
+these uploaded files will be stored in the storage folder, to be able to access these files, 
+following Laravel's explanation we need to create a symbolic link in the public folder, as follows :
 
     php artisan storage:link
 
 ### Usage
 
-After long steps in above, now we can use Webcore Platform.
+After being confused to follow the step by step above, now webcore has been integrated with your laravel project.
 
-For example we can generate admin page for manage (CRUD) of our pages, run this artisan command :
+To try it you can start generating admin page for manage (CRUD) of our pages, by running the following artisan command :
 
     php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin --logs
 
 #### More documentation
 
-Webcore include many packages, ie : image manipulation, code generator, file manager, etc.
-For more usage documentation you can find in https://github.com/dandisy/webcore
+Webcore contains a lot of very useful packages, 
+ie : image manipulation (Glide), code generator (inspired by Infyom), file manager, and many others.
+
+For more usage documentation you can find it on https://github.com/dandisy/webcore
 
 
 #
