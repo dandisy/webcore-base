@@ -69,7 +69,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    WebCORE
+                    Webcore
                 </a>
             </div>
 

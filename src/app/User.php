@@ -4,10 +4,15 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laratrust\Traits\LaratrustUserTrait;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Notifiable; 
+    use HasApiTokens, Notifiable;
+    use LaratrustUserTrait;
+    
+    public $table = 'users';   
 
     /**
      * The attributes that are mass assignable.
@@ -35,10 +40,14 @@ class User extends Authenticatable
     public static $rules = [
         'name' => 'required',
         'email' => 'required',
-        'password' => 'required'
+        // 'password' => 'required'
     ];
 
     public function role() {
         return $this->hasOne('App\Models\RoleUser');
+    }
+
+    public function profile() {
+        return $this->hasOne('App\Models\Profile');
     }
 }

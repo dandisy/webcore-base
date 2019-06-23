@@ -1,5 +1,13 @@
 <?php
 
+//use App\Models\MenuItem;
+use Illuminate\Http\Request;
+use League\Glide\ServerFactory;
+use League\Glide\Responses\LaravelResponseFactory;
+use Illuminate\Contracts\Filesystem\Filesystem;
+use App\Repositories\ProfileRepository;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +26,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/admin', function () {
-    return redirect('dashboard');
+    // if(Laratrust::hasRole(['administrator','superadministrator'])) {
+        return redirect('dashboard');
+    // } else {
+    //     return redirect('home');
+    // }
+});
+
+Route::get('edit-profile', function(ProfileRepository $profileRepository) {
+    return view('profiles.edit')->with('profile', $profileRepository->findWhere(['user_id' => Auth::user()->id])->first());
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -26,19 +42,21 @@ Route::group(['middleware' => 'auth'], function () {
         return view('dashboard');
     });
 
-    Route::get('stats', 'HomeController@index');
+    Route::get('analytics', 'HomeController@index');
 
-    // Route::group(['middleware' => ['role:superadministrator|administrator']], function () {
-        Route::resource('users', 'UserController');
+    Route::group(['middleware' => ['role:superadministrator']], function () {
+        // Route::resource('users', 'UserController');
 
-        Route::resource('profiles', 'ProfileController');
+        // Route::resource('profiles', 'ProfileController');
 
         Route::resource('roles', 'RoleController');
 
         Route::resource('permissions', 'PermissionController');
+    });
 
+    Route::group(['middleware' => ['role:superadministrator|administrator']], function () {
         Route::resource('settings', 'SettingController');
-    // });
+    });
 });
 
 Route::get('/img/{path}', function(Filesystem $filesystem, $path) {
